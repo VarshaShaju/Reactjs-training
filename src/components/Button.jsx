@@ -1,7 +1,7 @@
 const Button = (props) => {
-    const {label, handleClick } = props;
+    const {label, handleClick, id } = props;
     return(
-        <button onClick={() => handleClick()}> {label}</button>
+        <button id ={id} onClick={() => handleClick()}> {label}</button>
     );
 }
 export default Button;

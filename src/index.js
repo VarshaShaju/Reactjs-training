@@ -7,7 +7,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import EmployeeList from './pages/EmployeeList';
 import CreateEmployee from './pages/CreateEmployee';
-import Counter from './pages/Counter';
+import EmployeeDetails from './pages/EmployeeDetails';
+import UpdateEmployee from './pages/UpdateEmployee';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 
@@ -19,8 +20,10 @@ root.render(
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path='/list' element={<EmployeeList />} />
+          <Route path='/edit/:id' element={<UpdateEmployee />} />
+          <Route path='/details/:id' element={<EmployeeDetails/>} />
           <Route path="/create" element={<CreateEmployee />} />
-          <Route path="/counter" element={<Counter />} />
+          {/* <Route path="/counter" element={<Counter />} /> */}
         </Routes>
       </Provider>
     </BrowserRouter>

@@ -1,44 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-import Button from './components/Button';
-import InputField from './components/InputField';
-import { useEffect, useState } from 'react';
-import TextField from './components/TextField';
-import CreateEmployee from './pages/CreateEmployee';
-import EmployeeList from './pages/EmployeeList';
-import Counter from './pages/Counter';
 
 function App() {
-  const [userName, setUserName] = useState('Varsha');
-  const [displayName, setDisplayName] = useState('');
-
-  useEffect(()=>{
-      setUserName('');
-      },[displayName]);
-
-  useEffect(()=>{
-    setUserName('Varsha')
-  },[]);
-
-  const onUserNameChange = (userName) => {
-    setUserName(userName);
-  };
-
-  const onButtonClick = () => {
-    setDisplayName(userName)
-  };
-
   return (
     <div className="App">
-      <Button label="Click Me" handleClick={onButtonClick}/>
-
-      <InputField label="User name" onChange={onUserNameChange} value={userName}/>
-
-      <TextField text = {userName}/>
-      <TextField text = {displayName}/>
-      <CreateEmployee/>
-      <EmployeeList/>
-     
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }

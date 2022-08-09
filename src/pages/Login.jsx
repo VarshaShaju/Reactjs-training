@@ -1,14 +1,19 @@
-import Button from "../components/Button"
-import {useNavigate} from "react-router-dom"
 
-const Login = () => {
-    const navigate = useNavigate();
-    const goToNextPage =() =>{
-        navigate('/list');
+import LoginPic from "../assets/LoginPic.png"
+import LoginBox from "../components/LoginBox";
+import '../styles/style.css'
 
-    };
-    return (
-        <Button label = "Next" handleClick={goToNextPage}/>
-    );
+
+
+const Login =()=>{
+  
+    return(
+        <div className="loginpage">
+            <img src={LoginPic} className="loginpic"/>
+            <LoginBox/>
+        </div>
+        
+    )
 }
+
 export default Login;

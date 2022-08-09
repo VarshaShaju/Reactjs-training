@@ -1,13 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
-import  { counterSlice } from "./slices/counterSlice";
-import { baseApi } from "../services/baseApi";
-import { setupListeners } from "@reduxjs/toolkit/dist/query";
+import { configureStore } from '@reduxjs/toolkit'
+import { setupListeners } from '@reduxjs/toolkit/dist/query'
+import { baseApi } from '../services/baseApi'
+
 export const store = configureStore({
   reducer: {
-    [baseApi.reducerPath]: baseApi.reducer
+    [baseApi.reducerPath]: baseApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(baseApi.middleware),
 })
 
-setupListeners(store.dispatch);
+setupListeners(store.dispatch)
